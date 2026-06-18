@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Piedrahita SAS — Nosotros</title>
+<style>
+:root{--black:#000;--black-soft:#0a0a0a;--charcoal:#131313;--line:rgba(255,255,255,0.08);--line-strong:rgba(255,255,255,0.16);--white:#f5f3f0;--grey:#8a8a8a;--grey-dim:#5c5c5c;--orange:#f0750f;--orange-deep:#c75a08;--ease:cubic-bezier(0.16,1,0.3,1);--ease-soft:cubic-bezier(0.25,0.46,0.45,0.94);}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--white);font-family:'Helvetica Neue',Arial,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+::selection{background:var(--orange);color:var(--black);}
+::-webkit-scrollbar{width:5px;}::-webkit-scrollbar-track{background:var(--black);}::-webkit-scrollbar-thumb{background:var(--orange-deep);}
+a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;}button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+.eyebrow{font-size:11px;letter-spacing:0.32em;text-transform:uppercase;color:var(--orange);font-weight:600;}
+.hairline{height:1px;background:var(--line);width:100%;}
+.hairline-orange{height:1px;background:linear-gradient(90deg,transparent,var(--orange),transparent);}
+.container{max-width:1400px;margin:0 auto;padding:0 56px;}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:20px 56px;transition:background .5s var(--ease),padding .5s var(--ease),border-color .5s var(--ease);border-bottom:1px solid transparent;}
+.nav.scrolled{background:rgba(0,0,0,0.9);backdrop-filter:blur(18px);padding:12px 56px;border-bottom:1px solid var(--line);}
+.nav-logo img{height:48px;width:auto;object-fit:contain;transition:height .4s;}
+.nav.scrolled .nav-logo img{height:36px;}
+.nav-links{display:flex;align-items:center;gap:40px;}
+.nav-link{font-size:13px;letter-spacing:0.04em;color:var(--white);position:relative;padding:6px 0;opacity:0.75;transition:opacity .3s,color .3s;}
+.nav-link:hover{opacity:1;}
+.nav-link::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--orange);transition:width .35s var(--ease);}
+.nav-link:hover::after,.nav-link.active::after{width:100%;}
+.nav-link.active{opacity:1;color:var(--orange);}
+.nav-cta{border:1px solid var(--line-strong);padding:10px 22px;font-size:12px;letter-spacing:0.06em;border-radius:30px;transition:border-color .3s,background .3s,color .3s;}
+.nav-cta:hover{border-color:var(--orange);background:var(--orange);color:var(--black);}
+.nav-burger{display:none;flex-direction:column;gap:5px;width:28px;z-index:1001;}
+.nav-burger span{height:1.5px;width:100%;background:var(--white);transition:transform .3s,opacity .3s;display:block;}
+.nav-burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+.nav-burger.open span:nth-child(2){opacity:0;}
+.nav-burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .9s var(--ease),transform .9s var(--ease);}
+.reveal.in{opacity:1;transform:translateY(0);}
+.reveal-scale{opacity:0;transform:scale(0.93);transition:opacity 1s var(--ease),transform 1s var(--ease);}
+.reveal-scale.in{opacity:1;transform:scale(1);}
+.delay-1{transition-delay:.12s;}.delay-2{transition-delay:.24s;}.delay-3{transition-delay:.36s;}.delay-4{transition-delay:.48s;}
+.to-top{position:fixed;bottom:28px;right:28px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line-strong);background:rgba(0,0,0,0.7);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;z-index:900;opacity:0;pointer-events:none;transition:opacity .4s,border-color .3s;}
+.to-top.show{opacity:1;pointer-events:auto;}
+.to-top:hover{border-color:var(--orange);}
+
+/* ===== QUIENES SOMOS HERO ===== */
+.nos-hero{position:relative;height:100vh;overflow:hidden;display:flex;align-items:flex-end;justify-content:center;padding-bottom:80px;}
+.nos-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;background-image:url('https://piedrahitasas.com/wp-content/uploads/2026/06/fondo.png');filter:brightness(0.6);}
+.nos-hero-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.55) 50%,rgba(0,0,0,0.92) 100%);}
+.nos-hero-content{position:relative;z-index:2;text-align:center;max-width:820px;padding:0 24px;}
+.nos-hero-logo{width:54px;height:54px;margin:0 auto 24px;}
+.nos-hero-content p{font-size:clamp(17px,2vw,22px);line-height:1.65;font-weight:300;color:#e0ddd8;}
+.nos-hero-content p strong{color:var(--white);font-weight:600;}
+.nos-pillars{margin-top:46px;}
+.nos-pillars-row{display:flex;justify-content:center;gap:18px;padding:18px 0;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;font-weight:600;color:var(--orange);}
+.nos-pillars-row .sep{color:rgba(255,255,255,0.25);font-weight:300;}
+
+/* PROPOSITO */
+.proposito{padding:130px 0 80px;background:var(--black);}
+.proposito .container{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;border-top:1px solid var(--line);}
+.prop-item{padding:56px 40px;border-right:1px solid var(--line);}
+.prop-item:last-child{border-right:none;}
+.prop-item h4{font-size:20px;font-weight:600;margin-bottom:18px;color:var(--orange);}
+.prop-item p{color:var(--grey);font-size:14.5px;line-height:1.75;font-weight:300;}
+.prop-quote{grid-column:1/-1;padding:60px 40px;border-top:1px solid var(--line);text-align:center;}
+.prop-quote p:first-child{font-size:clamp(18px,2.2vw,26px);color:var(--white);font-weight:300;line-height:1.6;max-width:720px;margin:0 auto;}
+.prop-quote p.italic{margin-top:20px;font-style:italic;font-family:Georgia,serif;font-size:clamp(16px,1.8vw,22px);color:var(--orange);}
+
+/* HOUSE / STICKY */
+.house-panel{display:grid;grid-template-columns:1fr 1fr;background:var(--black-soft);}
+.house-sticky-col{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.house-bg-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s var(--ease-soft);}
+.house-bg-slide.active{opacity:1;}
+.house-scrim{position:absolute;inset:0;background:rgba(0,0,0,0.6);}
+.house-mark{position:relative;z-index:2;width:110px;height:110px;filter:drop-shadow(0 8px 36px rgba(240,117,15,0.4));}
+.house-text-col{padding:120px 70px;display:flex;flex-direction:column;gap:88px;}
+.house-item h4{font-size:22px;font-weight:600;margin-bottom:12px;color:var(--orange);}
+.house-item p{color:var(--grey);font-size:15px;line-height:1.75;font-weight:300;max-width:420px;}
+
+/* CLIENTES MARQUEE */
+.clientes{padding:120px 0 80px;border-top:1px solid var(--line);}
+.clientes .eyebrow{text-align:center;display:block;margin-bottom:50px;}
+.marquee-row{width:100%;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,black 8%,black 92%,transparent);mask-image:linear-gradient(90deg,transparent,black 8%,black 92%,transparent);margin-bottom:24px;}
+.marquee-track{display:flex;gap:20px;width:max-content;}
+.mq-right{animation:mqR 36s linear infinite;}
+.mq-left{animation:mqL 42s linear infinite;}
+@keyframes mqR{from{transform:translateX(-50%);}to{transform:translateX(0);}}
+@keyframes mqL{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.logo-tile{flex:0 0 auto;width:190px;height:104px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;padding:22px 28px;background:var(--black-soft);transition:border-color .3s;}
+.logo-tile:hover{border-color:var(--orange-deep);}
+.logo-tile img{max-width:100%;max-height:100%;object-fit:contain;filter:grayscale(1) brightness(2.2) contrast(0.85);opacity:0.72;transition:filter .4s,opacity .4s;}
+.logo-tile:hover img{filter:grayscale(0) brightness(1.1);opacity:1;}
+
+/* METODOLOGIA */
+.metodologia{padding:130px 0;background:var(--black);}
+.metodo-head{text-align:center;margin-bottom:80px;}
+.metodo-head .eyebrow{margin-bottom:18px;display:block;}
+.metodo-head h3{font-size:clamp(26px,3.4vw,42px);font-weight:600;}
+.metodo-list{max-width:900px;margin:0 auto;}
+.metodo-item{display:grid;grid-template-columns:80px 1fr;gap:28px;padding:44px 0;border-top:1px solid var(--line);align-items:start;}
+.metodo-item:last-child{border-bottom:1px solid var(--line);}
+.metodo-num{font-family:Georgia,serif;font-style:italic;font-size:32px;color:var(--orange);}
+.metodo-body h4{font-size:21px;font-weight:600;margin-bottom:12px;}
+.metodo-body p{color:var(--grey);font-size:15px;line-height:1.75;font-weight:300;max-width:580px;}
+
+/* 25 AÑOS */
+.experiencia{position:relative;height:75vh;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.exp-bg{position:absolute;inset:0;background-size:cover;background-position:center;background-attachment:fixed;background-image:url('https://piedrahitasas.com/wp-content/uploads/2024/06/sin-titulo-38-24-scaled.webp');}
+.exp-curtain{position:absolute;inset:0;background:var(--black);transform-origin:bottom;z-index:1;transition:transform 1.4s var(--ease-soft);}
+.exp-curtain.lifted{transform:scaleY(0);}
+.exp-text{position:relative;z-index:2;text-align:center;font-size:clamp(28px,4.5vw,56px);font-weight:300;text-shadow:0 4px 30px rgba(0,0,0,0.7);}
+.exp-text strong{font-weight:700;}
+.exp-text em{font-style:italic;color:var(--orange);font-family:Georgia,serif;}
+
+@media(max-width:980px){
+  .nav{padding:16px 20px;}.nav.scrolled{padding:10px 20px;}
+  .container{padding:0 20px;}
+  .nav-links{position:fixed;top:0;right:0;height:100vh;width:78vw;max-width:300px;background:rgba(0,0,0,0.97);backdrop-filter:blur(20px);flex-direction:column;justify-content:center;gap:28px;transform:translateX(100%);transition:transform .5s var(--ease);border-left:1px solid var(--line);}
+  .nav-links.open{transform:translateX(0);}
+  .nav-link{font-size:20px;}.nav-cta{display:none;}.nav-burger{display:flex;}
+  .proposito .container{grid-template-columns:1fr;}
+  .prop-item{border-right:none;border-bottom:1px solid var(--line);padding:40px 20px;}
+  .house-panel{grid-template-columns:1fr;}.house-sticky-col{display:none;}
+  .house-text-col{padding:60px 20px;gap:60px;}
+  .metodo-item{grid-template-columns:50px 1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="https://piedrahitasas.com/wp-content/uploads/2023/09/logo-cdp-2023_Mesa-de-trabajo-1-copia-11.png" alt="Piedrahita SAS">
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html" class="nav-link">Inicio</a>
+    <a href="nosotros.html" class="nav-link active">Nosotros</a>
+    <a href="proyectos.html" class="nav-link">Proyectos</a>
+    <a href="contacto.html" class="nav-link">Contacto</a>
+  </div>
+  <a href="https://api.whatsapp.com/send/?phone=573106509774" target="_blank" class="nav-cta">Contáctanos</a>
+  <button class="nav-burger" id="navBurger" aria-label="Menú"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- QUIENES SOMOS HERO -->
+<div class="nos-hero">
+  <div class="nos-hero-bg"></div>
+  <div class="nos-hero-scrim"></div>
+  <div class="nos-hero-content">
+    <svg class="nos-hero-logo" viewBox="0 0 100 100" fill="none"><path d="M50 8 L92 44 L82 44 L82 92 L58 92 L58 60 L42 60 L42 92 L18 92 L18 44 L8 44 Z" fill="#f0750f"/></svg>
+    <p class="reveal">Somos una empresa colombiana, especialista en el <strong>diseño, fabricación e instalación de mobiliario a la medida</strong> para espacios corporativos, comerciales y residenciales.</p>
+    <p class="reveal delay-1" style="margin-top:16px;">Contamos con una trayectoria sólida que inició con la <strong>fabricación y mantenimiento de muebles en madera.</strong></p>
+    <p class="reveal delay-2" style="margin-top:16px;">Trabajamos con materiales de alta calidad, tecnología de punta y un equipo altamente calificado, comprometido con la excelencia en cada detalle.</p>
+    <div class="nos-pillars reveal delay-3">
+      <div class="hairline-orange"></div>
+      <div class="nos-pillars-row">
+        <span>Innovación</span><span class="sep">/</span>
+        <span>Cumplimiento</span><span class="sep">/</span>
+        <span>Calidad</span>
+      </div>
+      <div class="hairline-orange"></div>
+    </div>
+  </div>
+</div>
+
+<!-- NUESTRO PROPÓSITO -->
+<div class="proposito">
+  <div class="container">
+    <div class="prop-item reveal">
+      <h4>Experiencia</h4>
+      <p>Más de dos décadas diseñando, fabricando e instalando mobiliario a la medida para empresas que buscan espacios funcionales.</p>
+    </div>
+    <div class="prop-item reveal delay-1">
+      <h4>Fabricación propia</h4>
+      <p>Contamos con planta y equipo técnico propio, lo que nos permite controlar cada etapa del proceso.</p>
+    </div>
+    <div class="prop-item reveal delay-2">
+      <h4>Nuestros clientes</h4>
+      <p>Nuestro propósito es mejorar la vida de las personas a través del diseño de espacios funcionales, armónicos y con alma.</p>
+    </div>
+    <div class="prop-quote reveal delay-3">
+      <p>Un entorno bien creado transforma la manera en que vivimos, trabajamos y sentimos.</p>
+      <p class="italic">"Adecuamos tus espacios."</p>
+    </div>
+  </div>
+</div>
+
+<!-- STICKY HOUSE + ITEMS -->
+<div class="house-panel">
+  <div class="house-sticky-col" style="position:sticky;top:0;height:100vh;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+    <div class="house-bg-slide active" style="background-image:url('https://piedrahitasas.com/wp-content/uploads/2025/10/Sin-titulo-1-1.jpg');position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s var(--ease-soft);"></div>
+    <div class="house-bg-slide" style="background-image:url('https://piedrahitasas.com/wp-content/uploads/2025/10/pp-scaled.jpg');position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s var(--ease-soft);"></div>
+    <div class="house-bg-slide" style="background-image:url('https://piedrahitasas.com/wp-content/uploads/2026/06/mercado_libre1.jpg');position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s var(--ease-soft);"></div>
+    <div class="house-bg-slide" style="background-image:url('https://piedrahitasas.com/wp-content/uploads/2026/06/deloitte7.jpg');position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s var(--ease-soft);"></div>
+    <div class="house-scrim" style="position:absolute;inset:0;background:rgba(0,0,0,0.58);"></div>
+    <svg class="house-mark" viewBox="0 0 100 100" fill="none"><path d="M50 8 L92 44 L82 44 L82 92 L58 92 L58 60 L42 60 L42 92 L18 92 L18 44 L8 44 Z" fill="#f0750f" opacity="0.95"/></svg>
+  </div>
+  <div class="house-text-col" id="houseItems">
+    <div class="house-item reveal">
+      <h4>Experiencia</h4>
+      <p>Más de dos décadas diseñando, fabricando e instalando mobiliario a la medida para empresas que buscan espacios funcionales sin sacrificar estética ni calidad.</p>
+    </div>
+    <div class="house-item reveal">
+      <h4>Fabricación propia</h4>
+      <p>Contamos con planta y equipo técnico propio, lo que nos permite controlar cada etapa del proceso: del concepto al acabado final, con altos estándares de precisión.</p>
+    </div>
+    <div class="house-item reveal">
+      <h4>Cercanía con el cliente</h4>
+      <p>Acompañamos cada proyecto de cerca, entendiendo la identidad de cada marca para traducirla en espacios que comunican y que perduran en el tiempo.</p>
+    </div>
+    <div class="house-item reveal">
+      <h4>Compromiso colombiano</h4>
+      <p>Creemos en el talento y la manufactura nacional. Cada pieza que entregamos refleja el cuidado, la dedicación y la calidad del trabajo hecho en Colombia.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CLIENTES MARQUEE -->
+<div class="clientes">
+  <span class="eyebrow">Nuestros clientes</span>
+  <div class="marquee-row">
+    <div class="marquee-track mq-right">
+      <div class="logo-tile"><img src="https://piedrahitasas.com/wp-content/uploads/2025/07/4.png" alt="Cliente"></div>
+      <div class="logo-tile"><img src="https://piedrahitasas.com/wp-content/uploads/2025/07/3-e1751563194253.png" alt="Cliente"></div>
+      <div class="logo-tile"><img src="https://piedrahitasas.com/wp-content/uploads/2025/07/2-e1751562900976.png" alt="Cliente"></div>
+      <div class="logo-tile"><img src="https://piedrahitasas.com/wp-content/uploads/2025/07/1.png" alt="Cliente"></div>
+      <div class="logo-tile"><img src="https://piedrahitasas.com/wp-content/uploads/2026/06/logo1nubank.png" alt="Nu Bank"></div>
+      <div class="logo-tile"><img src="https://piedrahitasas.com/wp-content/uploads/2026/06/logo1avianca.png" alt="Avianca"></div>
+      <div class="logo-tile"><img src="https://piedrahitasas.com/wp-content/uploads/2026/06/logo2tmf.png" alt="TMF"></div>
+      <div class="logo-tile"><img src="https://piedrahitasas.com/wp-content/uploads/2025/07/5.png" alt="Cliente"></div>
+      <!-- duplicado para loop -->
+      <div class="logo-tile"><img src="https://piedrahitasas.com/wp-content/uploads/2025/07/4.png" alt="Cliente"></div>
+      <div class="logo-tile"><img src="https://piedrahitasas.com/wp-content/uploads/2025/07/3-e1751563194253.png" alt="Cliente"></div>
+      <div class="logo-tile"><img src="https://piedrahitasas.com/wp-content/uploads/2025/07/2-e1751562900976.png" alt="Cliente"></div>
+      <div class="logo-tile"><img src="https://piedrahitasas.com/wp-content/uploads/2025/07/1.png" alt="Cliente"></div>
+      <div class="logo-tile"><img src="https://piedrahitasas.com/wp-content/uploads/2026/06/logo1nubank.png" alt="Nu Bank"></div>
+      <div class="logo-tile"><img src="https://piedrahitasas.com/wp-content/uploads/2026/06/logo1avianca.png" alt="Avianca"></div>
+      <div class="logo-tile"><img src="https://piedrahitasas.com/wp-content/uploads/2026/06/logo2tmf.png" alt="TMF"></div>
+      <div class="logo-tile"><img src="https://piedrahitasas.com/wp-content/uploads/2025/07/5.png" alt="Cliente"></div>
+    </div>
+  </div>
+  <div class="marquee-row">
+    <div class="marquee-track mq-left">
+      <div class="logo-tile"><img src="https://piedrahitasas.com/wp-content/uploads/2025/08/image-3.png" alt="Cliente"></div>
+      <div class="logo-tile"><img src="https://piedrahitasas.com/wp-content/uploads/2025/07/7-1.png" alt="Cliente"></div>
+      <div class="logo-tile"><img src="https://piedrahitasas.com/wp-content/uploads/2025/07/13-e1751562864353.png" alt="Cliente"></div>
+      <div class="logo-tile"><img src="https://piedrahitasas.com/wp-content/uploads/2025/07/12.png" alt="Cliente"></div>
+      <div class="logo-tile"><img src="https://piedrahitasas.com/wp-content/uploads/2025/07/11.png" alt="Cliente"></div>
+      <div class="logo-tile"><img src="https://piedrahitasas.com/wp-content/uploads/2025/07/10.png" alt="Cliente"></div>
+      <div class="logo-tile"><img src="https://piedrahitasas.com/wp-content/uploads/2025/07/8.png" alt="Cliente"></div>
+      <div class="logo-tile"><img src="https://piedrahitasas.com/wp-content/uploads/2025/07/7.png" alt="Cliente"></div>
+      <!-- duplicado -->
+      <div class="logo-tile"><img src="https://piedrahitasas.com/wp-content/uploads/2025/08/image-3.png" alt="Cliente"></div>
+      <div class="logo-tile"><img src="https://piedrahitasas.com/wp-content/uploads/2025/07/7-1.png" alt="Cliente"></div>
+      <div class="logo-tile"><img src="https://piedrahitasas.com/wp-content/uploads/2025/07/13-e1751562864353.png" alt="Cliente"></div>
+      <div class="logo-tile"><img src="https://piedrahitasas.com/wp-content/uploads/2025/07/12.png" alt="Cliente"></div>
+      <div class="logo-tile"><img src="https://piedrahitasas.com/wp-content/uploads/2025/07/11.png" alt="Cliente"></div>
+      <div class="logo-tile"><img src="https://piedrahitasas.com/wp-content/uploads/2025/07/10.png" alt="Cliente"></div>
+      <div class="logo-tile"><img src="https://piedrahitasas.com/wp-content/uploads/2025/07/8.png" alt="Cliente"></div>
+      <div class="logo-tile"><img src="https://piedrahitasas.com/wp-content/uploads/2025/07/7.png" alt="Cliente"></div>
+    </div>
+  </div>
+</div>
+
+<!-- METODOLOGIA -->
+<div class="metodologia">
+  <div class="container">
+    <div class="metodo-head">
+      <span class="eyebrow">Estudiar › Diseñar › Fabricar › Instalar</span>
+      <h3 class="reveal delay-1">Nuestra metodología</h3>
+    </div>
+    <div class="metodo-list">
+      <div class="metodo-item reveal delay-1">
+        <span class="metodo-num">01</span>
+        <div class="metodo-body">
+          <h4>Diseño</h4>
+          <p>Creamos conceptos que nacen de la esencia de cada espacio y de las personas que lo habitan. Nuestro equipo de diseño traduce ideas en propuestas funcionales, estéticas y personalizadas, combinando creatividad, ergonomía y tendencias contemporáneas.</p>
+        </div>
+      </div>
+      <div class="metodo-item reveal delay-2">
+        <span class="metodo-num">02</span>
+        <div class="metodo-body">
+          <h4>Fabricación</h4>
+          <p>Contamos con procesos de producción de alta precisión que integran tecnología, artesanía y materiales de la mejor calidad. Cada pieza es elaborada con cuidado y compromiso, garantizando durabilidad, acabados impecables y un sello de excelencia que refleja el valor del trabajo colombiano.</p>
+        </div>
+      </div>
+      <div class="metodo-item reveal delay-3">
+        <span class="metodo-num">03</span>
+        <div class="metodo-body">
+          <h4>Instalación</h4>
+          <p>Convertimos los proyectos en realidades tangibles, asegurando una instalación impecable y a tiempo. Nuestro equipo técnico se encarga de cada detalle con precisión y compromiso, garantizando resultados que superan las expectativas y espacios listos para disfrutarse desde el primer momento.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 25 AÑOS PARALLAX -->
+<div class="experiencia">
+  <div class="exp-bg"></div>
+  <div class="exp-curtain" id="expCurtain"></div>
+  <div class="exp-text reveal-scale">Más de <strong>25 años</strong> de<br><em>Experiencia.</em></div>
+</div>
+
+<button class="to-top" id="toTop" aria-label="Volver arriba">
+  <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M5 12l7-7 7 7" stroke="#f0750f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script>
+(function(){
+  const nav=document.getElementById('nav');
+  const toTop=document.getElementById('toTop');
+  window.addEventListener('scroll',()=>{
+    nav.classList.toggle('scrolled',window.scrollY>50);
+    toTop.classList.toggle('show',window.scrollY>600);
+  },{passive:true});
+  toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+  const burger=document.getElementById('navBurger');
+  const links=document.getElementById('navLinks');
+  burger.addEventListener('click',()=>{burger.classList.toggle('open');links.classList.toggle('open');});
+  links.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{burger.classList.remove('open');links.classList.remove('open');}));
+
+  const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});},{threshold:0.12});
+  document.querySelectorAll('.reveal,.reveal-scale').forEach(el=>ro.observe(el));
+  setTimeout(()=>document.querySelectorAll('.reveal').forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('in');}),100);
+
+  // House sticky BG
+  const houseSlides=document.querySelectorAll('.house-bg-slide');
+  if(houseSlides.length){
+    houseSlides[0].style.opacity='1';
+    const hItems=document.querySelectorAll('#houseItems .house-item');
+    const hio=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          const i=Array.from(hItems).indexOf(entry.target);
+          houseSlides.forEach(s=>s.style.opacity='0');
+          if(houseSlides[i])houseSlides[i].style.opacity='1';
+        }
+      });
+    },{threshold:0.5,rootMargin:'-15% 0px -15% 0px'});
+    hItems.forEach(item=>hio.observe(item));
+  }
+
+  // Curtain
+  const curtain=document.getElementById('expCurtain');
+  const expSection=document.querySelector('.experiencia');
+  if(curtain&&expSection){
+    const co=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting)curtain.classList.add('lifted');
+        else if(e.boundingClientRect.top>0)curtain.classList.remove('lifted');
+      });
+    },{threshold:0.3});
+    co.observe(expSection);
+  }
+
+  // Marquee pause
+  document.querySelectorAll('.marquee-track').forEach(t=>{
+    t.addEventListener('mouseenter',()=>t.style.animationPlayState='paused');
+    t.addEventListener('mouseleave',()=>t.style.animationPlayState='running');
+  });
+})();
+</script>
+</body>
+</html>
