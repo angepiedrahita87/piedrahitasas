@@ -91,8 +91,30 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;}button{f
 .logo-tile:hover img{filter:grayscale(0) brightness(1.1);opacity:1;}
 
 /* METODOLOGIA */
-.metodologia{padding:130px 0;background:var(--black);}
-.metodo-head{text-align:center;margin-bottom:80px;}
+.metodologia{
+    position:relative;
+    padding:130px 0;
+    background-image:url('https://piedrahitasas.com/wp-content/uploads/2024/03/sin-titulo-41-27-scaled.webp');
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+    overflow:hidden;
+}
+  .metodologia::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.55);
+    z-index:0;
+}
+  .metodo-head,
+.metodo-list{
+    position:relative;
+    z-index:1;
+}
+  .metodo-body p{
+    color:#e0ddd8;
+} 
 .metodo-head .eyebrow{margin-bottom:18px;display:block;}
 .metodo-head h3{font-size:clamp(26px,3.4vw,42px);font-weight:600;}
 .metodo-list{max-width:900px;margin:0 auto;}
@@ -104,7 +126,7 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;}button{f
 
 /* 25 AÑOS */
 .experiencia{position:relative;height:75vh;overflow:hidden;display:flex;align-items:center;justify-content:center;}
-.exp-bg{position:absolute;inset:0;background-size:cover;background-position:center;background-attachment:fixed;background-image:url('https://piedrahitasas.com/wp-content/uploads/2024/06/sin-titulo-38-24-scaled.webp');}
+.exp-bg{position:absolute;inset:0;background-size:cover;background-position:center;background-attachment:fixed;background-image:url('https://piedrahitasas.com/wp-content/uploads/2024/03/sin-titulo-41-27-scaled.webp');}
 .exp-curtain{position:absolute;inset:0;background:var(--black);transform-origin:bottom;z-index:1;transition:transform 1.4s var(--ease-soft);}
 .exp-curtain.lifted{transform:scaleY(0);}
 .exp-text{position:relative;z-index:2;text-align:center;font-size:clamp(28px,4.5vw,56px);font-weight:300;text-shadow:0 4px 30px rgba(0,0,0,0.7);}
