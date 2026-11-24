@@ -40,8 +40,14 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;}button{f
 /* CONTACT PAGE */
 .contact-page{flex:1;position:relative;overflow:hidden;}
 .contact-bg-img{position:absolute;inset:0;background:url('img/fondo-contacto.jpg') center/cover no-repeat;z-index:0;}
-.contact-bg-img::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.74);}
+.contact-bg-img::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.4);}
 .contact-page .container{position:relative;z-index:1;}
+.contact-grid{background:rgba(0,0,0,0.38);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);}
+.contact-hero h1{text-shadow:0 2px 24px rgba(0,0,0,0.55);}
+.contact-hero .eyebrow{text-shadow:0 1px 10px rgba(0,0,0,0.9),0 0 3px rgba(0,0,0,0.8);}
+.nav:not(.scrolled){background:linear-gradient(180deg,rgba(0,0,0,0.55),transparent);}
+.nav:not(.scrolled) .nav-link{text-shadow:0 1px 8px rgba(0,0,0,0.8);}
+.contact-social{color:rgba(255,255,255,0.8);}
 .contact-bg-glow{position:absolute;bottom:-20%;left:50%;width:1200px;height:1200px;transform:translateX(-50%);background:radial-gradient(circle,rgba(240,117,15,0.11) 0%,transparent 65%);pointer-events:none;}
 
 .contact-hero{padding:170px 0 80px;text-align:center;}
