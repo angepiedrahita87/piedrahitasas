@@ -55,7 +55,10 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;}button{f
 .nos-pillars-row .sep{color:rgba(255,255,255,0.25);font-weight:300;}
 
 /* PROPOSITO */
-.proposito{padding:130px 0 80px;background:var(--black);}
+.proposito{position:relative;padding:130px 0 80px;background:var(--black);overflow:hidden;}
+.proposito::before{content:'';position:absolute;inset:0;background:url('img/fondo-nosotros.jpg') center/cover no-repeat;z-index:0;}
+.proposito::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,#000 0%,rgba(0,0,0,0.78) 22%,rgba(0,0,0,0.84) 78%,#000 100%);z-index:1;}
+.proposito .container{position:relative;z-index:2;}
 .proposito .container{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;border-top:1px solid var(--line);}
 .prop-item{padding:56px 40px;border-right:1px solid var(--line);}
 .prop-item:last-child{border-right:none;}
@@ -85,10 +88,10 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;}button{f
 .mq-left{animation:mqL 42s linear infinite;}
 @keyframes mqR{from{transform:translateX(-50%);}to{transform:translateX(0);}}
 @keyframes mqL{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-.logo-tile{flex:0 0 auto;width:190px;height:104px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;padding:22px 28px;background:var(--black-soft);transition:border-color .3s;}
+.logo-tile{flex:0 0 auto;width:190px;height:104px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;padding:22px 28px;background:#f4f2ee;transition:border-color .3s;}
 .logo-tile:hover{border-color:var(--orange-deep);}
-.logo-tile img{max-width:100%;max-height:100%;object-fit:contain;filter:grayscale(1) brightness(2.2) contrast(0.85);opacity:0.72;transition:filter .4s,opacity .4s;}
-.logo-tile:hover img{filter:grayscale(0) brightness(1.1);opacity:1;}
+.logo-tile.dark{background:#161616;}
+.logo-tile img{max-width:100%;max-height:100%;object-fit:contain;}
 
 /* METODOLOGIA */
 .metodologia{
@@ -267,10 +270,10 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;}button{f
 <!-- STICKY HOUSE + ITEMS -->
 <div class="house-panel">
   <div class="house-sticky-col" style="position:sticky;top:0;height:100vh;overflow:hidden;display:flex;align-items:center;justify-content:center;">
-    <div class="house-bg-slide active" style="background-image:url('img/Sin-titulo-1-1.jpg');position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s var(--ease-soft);"></div>
-    <div class="house-bg-slide" style="background-image:url('img/pp-scaled.jpg');position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s var(--ease-soft);"></div>
-    <div class="house-bg-slide" style="background-image:url('img/mercado_libre1.jpg');position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s var(--ease-soft);"></div>
-    <div class="house-bg-slide" style="background-image:url('img/deloitte7.jpg');position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s var(--ease-soft);"></div>
+    <div class="house-bg-slide active" style="background-image:url('img/nosotros-slide-1.jpg');position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s var(--ease-soft);"></div>
+    <div class="house-bg-slide" style="background-image:url('img/nosotros-slide-2.jpg');position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s var(--ease-soft);"></div>
+    <div class="house-bg-slide" style="background-image:url('img/nosotros-slide-3.jpg');position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s var(--ease-soft);"></div>
+    <div class="house-bg-slide" style="background-image:url('img/nosotros-slide-4.jpg');position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s var(--ease-soft);"></div>
     <div class="house-scrim" style="position:absolute;inset:0;background:rgba(0,0,0,0.58);"></div>
     <svg class="house-mark" viewBox="0 0 100 100" fill="none"><path d="M50 8 L92 44 L82 44 L82 92 L58 92 L58 60 L42 60 L42 92 L18 92 L18 44 L8 44 Z" fill="#f0750f" opacity="0.95"/></svg>
   </div>
@@ -321,18 +324,18 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;}button{f
   <div class="marquee-row">
     <div class="marquee-track mq-left">
       <div class="logo-tile"><img src="img/image-3.png" alt="Cliente"></div>
-      <div class="logo-tile"><img src="img/7-1.png" alt="Cliente"></div>
+      <div class="logo-tile dark"><img src="img/7-1.png" alt="Cliente"></div>
       <div class="logo-tile"><img src="img/13-e1751562864353.png" alt="Cliente"></div>
-      <div class="logo-tile"><img src="img/12.png" alt="Cliente"></div>
+      <div class="logo-tile dark"><img src="img/12.png" alt="Cliente"></div>
       <div class="logo-tile"><img src="img/11.png" alt="Cliente"></div>
       <div class="logo-tile"><img src="img/10.png" alt="Cliente"></div>
       <div class="logo-tile"><img src="img/8.png" alt="Cliente"></div>
       <div class="logo-tile"><img src="img/7.png" alt="Cliente"></div>
       <!-- duplicado -->
       <div class="logo-tile"><img src="img/image-3.png" alt="Cliente"></div>
-      <div class="logo-tile"><img src="img/7-1.png" alt="Cliente"></div>
+      <div class="logo-tile dark"><img src="img/7-1.png" alt="Cliente"></div>
       <div class="logo-tile"><img src="img/13-e1751562864353.png" alt="Cliente"></div>
-      <div class="logo-tile"><img src="img/12.png" alt="Cliente"></div>
+      <div class="logo-tile dark"><img src="img/12.png" alt="Cliente"></div>
       <div class="logo-tile"><img src="img/11.png" alt="Cliente"></div>
       <div class="logo-tile"><img src="img/10.png" alt="Cliente"></div>
       <div class="logo-tile"><img src="img/8.png" alt="Cliente"></div>
@@ -403,21 +406,18 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;}button{f
   document.querySelectorAll('.reveal,.reveal-scale').forEach(el=>ro.observe(el));
   setTimeout(()=>document.querySelectorAll('.reveal').forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('in');}),100);
 
-  // House sticky BG
+  // House BG: cambia sola cada 4.5 s (sin depender del scroll ni del mouse)
   const houseSlides=document.querySelectorAll('.house-bg-slide');
   if(houseSlides.length){
-    houseSlides[0].style.opacity='1';
-    const hItems=document.querySelectorAll('#houseItems .house-item');
-    const hio=new IntersectionObserver(entries=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){
-          const i=Array.from(hItems).indexOf(entry.target);
-          houseSlides.forEach(s=>s.style.opacity='0');
-          if(houseSlides[i])houseSlides[i].style.opacity='1';
-        }
-      });
-    },{threshold:0.5,rootMargin:'-15% 0px -15% 0px'});
-    hItems.forEach(item=>hio.observe(item));
+    let hi=0;
+    houseSlides.forEach((s,k)=>s.style.opacity=k===0?'1':'0');
+    if(houseSlides.length>1){
+      setInterval(()=>{
+        houseSlides[hi].style.opacity='0';
+        hi=(hi+1)%houseSlides.length;
+        houseSlides[hi].style.opacity='1';
+      },4500);
+    }
   }
 
   // Curtain
