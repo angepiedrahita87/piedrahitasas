@@ -67,10 +67,10 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;}button{f
 .modal-meta-item{margin-bottom:22px;}
 .modal-meta-label{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--orange);font-weight:600;margin-bottom:4px;}
 .modal-meta-value{font-size:15px;}
-.modal-gallery{padding:100px 50px 60px;display:grid;grid-template-columns:1fr 1fr;gap:4px;align-content:start;}
-.modal-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .5s var(--ease-soft);}
+.modal-gallery{padding:100px 50px 60px;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;align-content:start;}
+.modal-gallery img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;transition:transform .5s var(--ease-soft);}
 .modal-gallery img:hover{transform:scale(1.02);}
-.modal-gallery img:first-child{grid-column:1/-1;aspect-ratio:auto;height:64vh;object-fit:contain;background:#000;}
+
 
 @media(max-width:980px){
   .nav{padding:16px 20px;}.nav.scrolled{padding:10px 20px;}
@@ -81,8 +81,7 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;}button{f
   .proy-grid{grid-template-columns:1fr 1fr;gap:3px;}
   .modal-inner{grid-template-columns:1fr;}
   .modal-sidebar{position:relative;height:auto;padding:100px 24px 40px;}
-  .modal-gallery{padding:20px 24px 60px;grid-template-columns:1fr;}
-  .modal-gallery img:first-child{aspect-ratio:4/3;height:auto;object-fit:cover;}
+  .modal-gallery{padding:20px 24px 60px;grid-template-columns:1fr 1fr;}
 }
 @media(max-width:560px){.proy-grid{grid-template-columns:1fr;}}
 </style>
@@ -195,6 +194,8 @@ const PROJECTS = [
       'img/WhatsApp-Image-2026-06-20-at-09.11.19-1.jpeg',
       'img/WhatsApp-Image-2026-06-20-at-09.11.19.jpeg',
       'img/WhatsApp-Image-2026-06-20-at-09.11.21.jpeg',
+      'img/WhatsApp-Image-2026-06-20-at-09.11.15.jpeg',
+      'img/WhatsApp-Image-2026-06-20-at-09.11.18.jpeg',
     ]
   },
   {
