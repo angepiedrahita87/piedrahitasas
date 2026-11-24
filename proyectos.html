@@ -201,6 +201,7 @@ const PROJECTS = [
   },
   {
     id:'avianca',
+    hidden:true, // OCULTO por ahora (esperando fotos de mejor calidad). Quita esta linea o pon false para mostrarlo de nuevo.
     name:'Avianca',
     location:'Bogotá, Colombia',
     pisos:'1 piso',
@@ -216,10 +217,11 @@ const PROJECTS = [
     ]
   },
 ];
+const VISIBLE_PROJECTS = PROJECTS.filter(p=>!p.hidden);
 
 // Render grid
 const grid = document.getElementById('proyGrid');
-PROJECTS.forEach((p,i)=>{
+VISIBLE_PROJECTS.forEach((p,i)=>{
   const tile = document.createElement('div');
   tile.className='proy-tile reveal'+(i>0?` delay-${Math.min(i,5)}`:'');
   tile.id=p.id;
@@ -283,7 +285,7 @@ setTimeout(()=>document.querySelectorAll('.reveal').forEach(el=>ro.observe(el)),
 // Open modal from hash (when coming from index)
 function checkHash(){
   const hash=location.hash.replace('#','');
-  if(hash){const p=PROJECTS.find(x=>x.id===hash);if(p)openModal(p);}
+  if(hash){const p=VISIBLE_PROJECTS.find(x=>x.id===hash);if(p)openModal(p);}
 }
 window.addEventListener('load',checkHash);
 </script>
