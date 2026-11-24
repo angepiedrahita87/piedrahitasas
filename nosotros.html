@@ -55,87 +55,30 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;}button{f
 .nos-pillars-row .sep{color:rgba(255,255,255,0.25);font-weight:300;}
 
 /* PROPOSITO */
-.proposito{position:relative;padding:130px 0 80px;background:var(--black);overflow:hidden;}
-.proposito::before{content:'';position:absolute;inset:0;background:url('img/fondo-nosotros.jpg') center/cover no-repeat;z-index:0;}
-.proposito::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,#000 0%,rgba(0,0,0,0.78) 22%,rgba(0,0,0,0.84) 78%,#000 100%);z-index:1;}
-.proposito .container{position:relative;z-index:2;}
-.proposito .container{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;border-top:1px solid var(--line);}
-.prop-item{padding:56px 40px;border-right:1px solid var(--line);}
-.prop-item:last-child{border-right:none;}
-.prop-item h4{font-size:20px;font-weight:600;margin-bottom:18px;color:var(--orange);}
-.prop-item p{color:var(--grey);font-size:14.5px;line-height:1.75;font-weight:300;}
-.prop-quote{grid-column:1/-1;padding:60px 40px;border-top:1px solid var(--line);text-align:center;}
-.prop-quote p:first-child{font-size:clamp(18px,2.2vw,26px);color:var(--white);font-weight:300;line-height:1.6;max-width:720px;margin:0 auto;}
-.prop-quote p.italic{margin-top:20px;font-style:italic;font-family:Georgia,serif;font-size:clamp(16px,1.8vw,22px);color:var(--orange);}
+.proposito{position:relative;padding:0 0 90px;background:#0d0d0d;}
+.proposito .container{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
+.prop-photo{height:clamp(240px,38vw,460px);margin:0 0 40px;background:url('img/fondo-nosotros.jpg') center/cover no-repeat;}
+.prop-item{padding:44px 36px;background:#161616;border:1px solid #2a2a2a;}
+.prop-item h4{font-size:22px;font-weight:600;margin-bottom:16px;color:var(--orange);}
+.prop-item p{color:#e4e0d8;font-size:16px;line-height:1.75;font-weight:400;}
+.prop-quote{grid-column:1/-1;padding:64px 40px 0;text-align:center;}
+.prop-quote p:first-child{font-size:clamp(19px,2.3vw,28px);color:#f4f1ea;font-weight:400;line-height:1.6;max-width:760px;margin:0 auto;}
+.prop-quote p.italic{margin-top:20px;font-style:italic;font-family:Georgia,serif;font-size:clamp(17px,1.9vw,24px);color:var(--orange);}
 
-/* HOUSE / STICKY */
-.house-panel{display:grid;grid-template-columns:1fr 1fr;background:var(--black-soft);}
-.house-sticky-col{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;align-items:center;justify-content:center;}
-.house-bg-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s var(--ease-soft);}
-.house-bg-slide.active{opacity:1;}
-.house-scrim{position:absolute;inset:0;background:rgba(0,0,0,0.6);}
-.house-mark{position:relative;z-index:2;width:min(340px,60%);height:auto;filter:drop-shadow(0 8px 30px rgba(0,0,0,0.55));}
-.house-text-col{padding:120px 70px;display:flex;flex-direction:column;gap:88px;}
-.house-item h4{font-size:22px;font-weight:600;margin-bottom:12px;color:var(--orange);}
-.house-item p{color:var(--grey);font-size:15px;line-height:1.75;font-weight:300;max-width:420px;}
-
-/* CLIENTES MARQUEE */
-.clientes{padding:120px 0 80px;border-top:1px solid var(--line);}
-.clientes .eyebrow{text-align:center;display:block;margin-bottom:50px;}
-.marquee-row{width:100%;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,black 8%,black 92%,transparent);mask-image:linear-gradient(90deg,transparent,black 8%,black 92%,transparent);margin-bottom:24px;}
-.marquee-track{display:flex;gap:20px;width:max-content;}
-.mq-right{animation:mqR 36s linear infinite;}
-.mq-left{animation:mqL 42s linear infinite;}
-@keyframes mqR{from{transform:translateX(-50%);}to{transform:translateX(0);}}
-@keyframes mqL{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-.logo-tile{flex:0 0 auto;width:190px;height:104px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;padding:22px 28px;background:#f4f2ee;transition:border-color .3s;}
-.logo-tile:hover{border-color:var(--orange-deep);}
-.logo-tile.dark{background:#161616;}
-.logo-tile img{max-width:100%;max-height:100%;object-fit:contain;}
 
 /* METODOLOGIA */
-.metodologia{
-    position:relative;
-    padding:130px 0;
-    background-image:url('img/sin-titulo-41-27-scaled.webp');
-    background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
-    overflow:hidden;
-}
-  .metodologia::before{
-    content:'';
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,0.55);
-    z-index:0;
-}
-.metodo-head{
-    text-align:center;
-}
-
-.metodo-head h3{
-    font-size:clamp(26px,3.4vw,42px);
-    font-weight:600;
-    color:#ffffff;
-}
-  .metodo-body p{
-    color:#e0ddd8;
-} 
-.metodo-head .eyebrow{margin-bottom:18px;display:block;}
-.metodo-head h3{font-size:clamp(26px,3.4vw,42px);font-weight:600;}
-.metodo-list{max-width:900px;margin:0 auto;}
-.metodo-item{display:grid;grid-template-columns:80px 1fr;gap:28px;padding:44px 0;border-top:1px solid var(--line);align-items:start;}
-.metodo-item:last-child{border-bottom:1px solid var(--line);}
-.metodo-num{font-family:Georgia,serif;font-style:italic;font-size:32px;color:var(--orange);}
-.metodo-body h4{font-size:21px;font-weight:600;margin-bottom:12px;}
-.metodo-body p{
-    color:#ffffff;
-    font-size:15px;
-    line-height:1.75;
-    font-weight:300;
-    max-width:580px;
-} 
+.metodologia{position:relative;background:#0d0d0d;}
+.metodo-split{display:grid;grid-template-columns:1fr 1.15fr;align-items:start;}
+.metodo-photo{position:sticky;top:0;height:100vh;background:url('img/metodologia.jpg') center/cover no-repeat;}
+.metodo-panel{padding:120px clamp(28px,5vw,80px);}
+.metodo-head{text-align:left;margin-bottom:24px;}
+.metodo-head h3{font-size:clamp(28px,3.4vw,44px);font-weight:600;color:#fff;}
+.metodo-list{max-width:620px;}
+.metodo-item{display:grid;grid-template-columns:70px 1fr;gap:20px;padding:40px 0;border-top:1px solid #2e2e2e;align-items:start;}
+.metodo-item:last-child{border-bottom:1px solid #2e2e2e;}
+.metodo-num{font-family:Georgia,serif;font-style:italic;font-size:36px;color:var(--orange);}
+.metodo-body h4{font-size:22px;font-weight:600;margin-bottom:12px;color:#fff;}
+.metodo-body p{color:#e4e0d8;font-size:16px;line-height:1.75;font-weight:400;} 
 /* 25 AÑOS */
 .experiencia{
     position:relative;
@@ -206,6 +149,7 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;}button{f
   .house-panel{grid-template-columns:1fr;}.house-sticky-col{display:none;}
   .house-text-col{padding:60px 20px;gap:60px;}
   .metodo-item{grid-template-columns:50px 1fr;}
+  .metodo-split{grid-template-columns:1fr;}.metodo-photo{position:relative;height:260px;}.metodo-panel{padding:60px 20px;}
 }
 </style>
 </head>
@@ -247,6 +191,7 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;}button{f
 
 <!-- NUESTRO PROPÓSITO -->
 <div class="proposito">
+  <div class="prop-photo" role="img" aria-label="Sala de reuniones diseñada por Piedrahita"></div>
   <div class="container">
     <div class="prop-item reveal">
       <h4>Experiencia</h4>
@@ -270,10 +215,10 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;}button{f
 <!-- STICKY HOUSE + ITEMS -->
 <div class="house-panel">
   <div class="house-sticky-col" style="position:sticky;top:0;height:100vh;overflow:hidden;display:flex;align-items:center;justify-content:center;">
-    <div class="house-bg-slide active" style="background-image:url('img/nosotros-slide-1.jpg');position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s var(--ease-soft);"></div>
-    <div class="house-bg-slide" style="background-image:url('img/nosotros-slide-2.jpg');position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s var(--ease-soft);"></div>
-    <div class="house-bg-slide" style="background-image:url('img/nosotros-slide-3.jpg');position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s var(--ease-soft);"></div>
-    <div class="house-bg-slide" style="background-image:url('img/nosotros-slide-4.jpg');position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s var(--ease-soft);"></div>
+    <div class="house-bg-slide active" style="background-image:url('img/nosotros-slide-1.jpg');position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 0.8s var(--ease-soft);"></div>
+    <div class="house-bg-slide" style="background-image:url('img/nosotros-slide-2.jpg');position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 0.8s var(--ease-soft);"></div>
+    <div class="house-bg-slide" style="background-image:url('img/nosotros-slide-3.jpg');position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 0.8s var(--ease-soft);"></div>
+    <div class="house-bg-slide" style="background-image:url('img/nosotros-slide-4.jpg');position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 0.8s var(--ease-soft);"></div>
     <div class="house-scrim" style="position:absolute;inset:0;background:rgba(0,0,0,0.58);"></div>
     <img class="house-mark" src="img/logo-vertical.png" alt="Piedrahita SAS">
   </div>
@@ -346,7 +291,9 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;}button{f
 
 <!-- METODOLOGIA -->
 <div class="metodologia">
-  <div class="container">
+  <div class="metodo-split">
+  <div class="metodo-photo" role="img" aria-label="Taller de fabricación"></div>
+  <div class="metodo-panel">
     <div class="metodo-head">
       <h3 class="reveal delay-1">Nuestra metodología</h3>
     </div>
@@ -373,6 +320,7 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;}button{f
         </div>
       </div>
     </div>
+  </div>
   </div>
 </div>
 
@@ -406,7 +354,7 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;}button{f
   document.querySelectorAll('.reveal,.reveal-scale').forEach(el=>ro.observe(el));
   setTimeout(()=>document.querySelectorAll('.reveal').forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('in');}),100);
 
-  // House BG: cambia sola cada 4.5 s (sin depender del scroll ni del mouse)
+  // House BG: cambia sola cada 2 s (sin depender del scroll ni del mouse)
   const houseSlides=document.querySelectorAll('.house-bg-slide');
   if(houseSlides.length){
     let hi=0;
@@ -416,7 +364,7 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;}button{f
         houseSlides[hi].style.opacity='0';
         hi=(hi+1)%houseSlides.length;
         houseSlides[hi].style.opacity='1';
-      },4500);
+      },2000);
     }
   }
 
